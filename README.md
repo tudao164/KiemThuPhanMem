@@ -11,6 +11,7 @@ REST API quản lý To-Do với xác thực JWT, được xây dựng với Fast
 - ✅ Tìm kiếm và lọc To-Do (status, priority, search)
 - ✅ Đăng xuất với token blacklist
 - ✅ Admin: Quản lý người dùng và xem thống kê
+- ✅ **Frontend Web UI đầy đủ** (HTML/CSS/JavaScript)
 
 ### Yêu cầu phi chức năng
 - ✅ Mã hóa password với bcrypt
@@ -18,6 +19,7 @@ REST API quản lý To-Do với xác thực JWT, được xây dựng với Fast
 - ✅ Logging mỗi request
 - ✅ CORS middleware
 - ✅ Response time tracking
+- ✅ Responsive design cho mọi thiết bị
 
 ## Tech Stack
 
@@ -69,11 +71,16 @@ Hoặc với uvicorn:
 uvicorn main:app --reload
 ```
 
-API sẽ chạy tại: `http://localhost:8000`
+Ứng dụng sẽ chạy tại: `http://localhost:8000`
 
-## API Documentation
+### 6. Truy cập Frontend Web UI
 
-Sau khi chạy server, truy cập:
+Mở browser và truy cập:
+```
+http://localhost:8000
+```
+
+Hoặc xem API Documentation:
 - **Swagger UI**: http://localhost:8000/docs
 - **ReDoc**: http://localhost:8000/redoc
 

@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 import time
 import logging
 from app.database import engine, Base
@@ -57,17 +58,8 @@ app.include_router(auth.router)
 app.include_router(todos.router)
 app.include_router(admin.router)
 
-@app.get("/")
-def root():
-    return {
-        "message": "Welcome to Todo API",
-        "version": "1.0.0",
-        "docs": "/docs"
-    }
-
-@app.get("/health")
-def health_check():
-    return {"status": "healthy"}
+# Mount static files for frontend
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
 
 if __name__ == "__main__":
     import uvicorn
